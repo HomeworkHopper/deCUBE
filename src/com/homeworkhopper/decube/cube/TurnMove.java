@@ -1,4 +1,4 @@
-package com.homeworkhopper.cube;
+package com.homeworkhopper.decube.cube;
 
 import java.util.function.Function;
 

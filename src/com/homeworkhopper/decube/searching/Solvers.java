@@ -1,4 +1,4 @@
-package com.homeworkhopper.searching;
+package com.homeworkhopper.decube.searching;
 
 import java.util.*;
 import java.util.function.Predicate;

@@ -1,6 +1,6 @@
-package com.homeworkhopper.cube;
+package com.homeworkhopper.decube.cube;
 
-import static com.homeworkhopper.cube.CubeConfiguration.*;
+import static com.homeworkhopper.decube.cube.CubeConfiguration.*;
 
 public enum FaceTurn implements TurnMove {
     /**

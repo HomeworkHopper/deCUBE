@@ -1,11 +1,11 @@
-package com.homeworkhopper.cube;
+package com.homeworkhopper.decube.cube;
 
-import com.homeworkhopper.searching.Configuration;
+import com.homeworkhopper.decube.searching.Configuration;
 
 
 import java.util.*;
 
-import static com.homeworkhopper.cube.CubeConfiguration.Piece.Color.*;
+import static com.homeworkhopper.decube.cube.CubeConfiguration.Piece.Color.*;
 
 public final class CubeConfiguration implements Configuration<CubeConfiguration> {
 
