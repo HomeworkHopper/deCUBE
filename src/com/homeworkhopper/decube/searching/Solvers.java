@@ -7,10 +7,6 @@ public final class Solvers {
 
     private Solvers() {}
 
-    public static <T extends Configuration<T>> Optional<Iterable<T>> breadthFirst(T start, T goal) {
-        return breadthFirst(start, Predicate.isEqual(goal));
-    }
-
     public static <T extends Configuration<T>> Optional<Iterable<T>> breadthFirst(T start, Predicate<T> solution) {
 
         Queue<T> nodes = new ArrayDeque<>();
