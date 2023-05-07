@@ -1,13 +1,14 @@
 package com.homeworkhopper.decube.searching;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public final class Solvers {
 
     private Solvers() {}
 
-    public static <T extends Configuration<T>> Optional<Iterable<T>> breadthFirst(T start, Predicate<T> solution) {
+    public static <T> SearchResult<T> breadthFirst(T start, Function<T, Iterable<T>> successors, Predicate<T> solution) {
 
         Queue<T> nodes = new ArrayDeque<>();
         HashMap<T, T> backpointers = new HashMap<>();
@@ -27,16 +28,16 @@ public final class Solvers {
                     current = backpointers.get(current);
                 }
 
-                return Optional.of(path);
+                return new SearchResult<>(start, Optional.of(path.getLast()), Optional.of(path));
             }
 
-            for (T successor : current.getSuccessors()) {
+            for (T successor : successors.apply(current)) {
                 if (!backpointers.containsKey(successor)) {
                     nodes.add(successor);
                     backpointers.put(successor, current);
                 }
             }
         }
-        return Optional.empty();
+        return new SearchResult<>(start, Optional.empty(), Optional.empty());
     }
 }

@@ -1,13 +1,11 @@
 package com.homeworkhopper.decube.cube;
 
-import com.homeworkhopper.decube.searching.Configuration;
-
 
 import java.util.*;
 
 import static com.homeworkhopper.decube.cube.CubeConfiguration.Piece.Color.*;
 
-public final class CubeConfiguration implements Configuration<CubeConfiguration> {
+public final class CubeConfiguration {
 
     public static final CubeConfiguration SOLVED_CUBE = new CubeConfiguration(new Piece[][][]{
             {
@@ -57,18 +55,6 @@ public final class CubeConfiguration implements Configuration<CubeConfiguration>
 
     public Optional<TurnMove> getLastMove() {
         return Optional.ofNullable(this.lastMove);
-    }
-
-    @Override
-    public Iterable<CubeConfiguration> getSuccessors() {
-
-        Set<CubeConfiguration> successors = new HashSet<>();
-
-        for (FaceTurn faceTurn : FaceTurn.values()) {
-            successors.add(faceTurn.apply(this));
-        }
-
-        return successors;
     }
 
     @Override
